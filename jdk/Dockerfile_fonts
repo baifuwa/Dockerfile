@@ -1,0 +1,4 @@
+FROM myjava:8u292
+RUN mkdir -p /usr/share/fonts
+COPY timesfonts /usr/share/fonts/
+RUN apk update && apk add fontconfig mkfontscale mkfontdir && mkfontscale && mkfontdir
