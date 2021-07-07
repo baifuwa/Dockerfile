@@ -20,6 +20,7 @@ cd /usr/local/jdk8 && \
 wget https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jre_x64_linux_8u292b10.tar.gz && \
 tar -xf OpenJDK8U-jre_x64_linux_8u292b10.tar.gz --strip-components 1 && \
 rm -rf OpenJDK8U-jre_x64_linux_8u292b10.tar.gz && \
+# 修改java 禁用的协议，有的需要使用SSLv1 和SSLv1.1
 sed -i '/^jdk.tls.disabledAlgorithms/c\jdk.tls.disabledAlgorithms=SSLv3, RC4, DES, MD5withRSA, \\ ' /usr/local/jdk8/lib/security/java.security
 
 #******************设置JAVA变量环境******************
